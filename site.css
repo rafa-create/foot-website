@@ -14,8 +14,8 @@ body {
   font-family: "DM Sans", system-ui, sans-serif;
   overflow: hidden;
 }
-html[lang="nl"] [data-fr],
-html:not([lang="nl"]) [data-nl] { display: none; }
+html[lang="en"] [data-fr],
+html:not([lang="en"]) [data-en] { display: none; }
 
 .top {
   position: fixed;

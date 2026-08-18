@@ -1,23 +1,23 @@
 (function () {
-  var KEY = "rxb-lang";
+  var KEY = "foot-lang";
 
   function readLang() {
-    var q = /(?:\?|&)lang=(fr|nl)\b/.exec(location.search);
+    var q = /(?:\?|&)lang=(en|fr)\b/.exec(location.search);
     if (q) return q[1];
     try {
       var s = localStorage.getItem(KEY);
-      if (s === "fr" || s === "nl") return s;
+      if (s === "en" || s === "fr") return s;
     } catch (e) {}
     var n = (navigator.language || "fr").slice(0, 2).toLowerCase();
-    return n === "nl" ? "nl" : "fr";
+    return n === "en" ? "en" : "fr";
   }
 
   function apply(lang) {
     document.documentElement.lang = lang;
     try { localStorage.setItem(KEY, lang); } catch (e) {}
-    var titles = window.RXB_TITLES || {};
+    var titles = window.FOOT_TITLES || {};
     if (titles[lang]) document.title = titles[lang];
-    var desc = window.RXB_DESC || {};
+    var desc = window.FOOT_DESC || {};
     var meta = document.querySelector('meta[name="description"]');
     if (meta && desc[lang]) meta.setAttribute("content", desc[lang]);
     document.querySelectorAll(".lang button").forEach(function (b) {
@@ -27,8 +27,8 @@
 
   var lang = readLang();
   document.documentElement.lang = lang;
-  if (window.RXB_TITLES && window.RXB_TITLES[lang]) {
-    document.title = window.RXB_TITLES[lang];
+  if (window.FOOT_TITLES && window.FOOT_TITLES[lang]) {
+    document.title = window.FOOT_TITLES[lang];
   }
 
   document.addEventListener("DOMContentLoaded", function () {
