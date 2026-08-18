@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Rafael Orset — Player file</title>
   <link rel="canonical" href="https://rafa-create.github.io/foot-website/dossier.html" />
   <meta name="theme-color" content="#07080a" />
@@ -29,16 +29,18 @@
       <a href="./index.html" data-en>Site</a>
       <a href="./index.html" data-es>Sitio</a>
     </nav>
-    <button class="btn btn-ghost" type="button" data-print data-fr>Imprimer</button>
-    <button class="btn btn-ghost" type="button" data-print data-en>Print</button>
-    <button class="btn btn-ghost" type="button" data-print data-es>Imprimir</button>
-    <a class="btn btn-solid" data-mail data-fr>E-mail</a>
-    <a class="btn btn-solid" data-mail data-en>Email</a>
-    <a class="btn btn-solid" data-mail data-es>Email</a>
-    <div class="lang" role="group" aria-label="Language">
-      <button type="button" data-set="fr">FR</button>
-      <button type="button" data-set="en">EN</button>
-      <button type="button" data-set="es">ES</button>
+    <div class="top-actions">
+      <button class="btn btn-ghost" type="button" data-print data-fr>Imprimer</button>
+      <button class="btn btn-ghost" type="button" data-print data-en>Print</button>
+      <button class="btn btn-ghost" type="button" data-print data-es>Imprimir</button>
+      <a class="btn btn-solid" data-mail data-fr>E-mail</a>
+      <a class="btn btn-solid" data-mail data-en>Email</a>
+      <a class="btn btn-solid" data-mail data-es>Email</a>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-set="fr">FR</button>
+        <button type="button" data-set="en">EN</button>
+        <button type="button" data-set="es">ES</button>
+      </div>
     </div>
   </header>
 
@@ -92,6 +94,7 @@
     <h2 data-fr>Parcours</h2>
     <h2 data-en>Career</h2>
     <h2 data-es>Trayectoria</h2>
+    <div class="table-scroll">
     <table class="career">
       <thead>
         <tr>
@@ -105,6 +108,7 @@
       </thead>
       <tbody data-career></tbody>
     </table>
+    </div>
   </article>
 </body>
 </html>

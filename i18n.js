@@ -207,6 +207,7 @@
     document.querySelectorAll(".sheet").forEach(function (s) {
       s.hidden = true;
     });
+    document.body.classList.remove("sheet-open");
     if (location.hash && location.hash !== "#") {
       history.replaceState(null, "", location.pathname + location.search);
     }
@@ -217,6 +218,7 @@
     document.querySelectorAll(".sheet").forEach(function (s) {
       s.hidden = s.id !== "sheet-" + id;
     });
+    document.body.classList.add("sheet-open");
   }
 
   function loadPhotos() {

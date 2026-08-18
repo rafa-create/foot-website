@@ -6,6 +6,10 @@
   --line: rgba(201, 163, 106, 0.28);
 }
 * { box-sizing: border-box; }
+html {
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+}
 html, body { height: 100%; }
 body {
   margin: 0;
@@ -43,6 +47,12 @@ html:not([lang="en"]):not([lang="es"]) [data-es] { display: none; }
   text-transform: uppercase;
   font-weight: 600;
   white-space: nowrap;
+}
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-shrink: 0;
 }
 .top .btn {
   padding: 0.45rem 0.75rem;
@@ -243,8 +253,17 @@ html:not([lang="en"]):not([lang="es"]) [data-es] { display: none; }
   text-transform: uppercase;
   color: var(--gold);
 }
+.facts dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
 .facts dd a { color: inherit; text-decoration: none; }
 .facts dd a:hover { color: var(--gold); }
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
 .tbd { color: var(--muted); opacity: 0.7; }
 .hint {
   margin-top: 2rem;
@@ -414,17 +433,143 @@ html:not([lang="en"]):not([lang="es"]) [data-es] { display: none; }
 .foot span { opacity: 0.85; }
 
 @media (max-width: 800px) {
-  body { overflow: auto; }
-  .top { position: sticky; background: var(--bg); padding-bottom: 0.8rem; }
-  .nav { display: none; }
+  html, body {
+    height: auto;
+    min-height: 100%;
+    min-height: 100svh;
+    overflow: auto;
+  }
+  body.sheet-open {
+    overflow: hidden;
+    height: 100svh;
+  }
+  .top {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "wordmark actions"
+      "nav nav";
+    align-items: center;
+    gap: 0.55rem 0.7rem;
+    padding: max(0.65rem, env(safe-area-inset-top)) 0.9rem 0.7rem;
+    background: rgba(7, 8, 10, 0.96);
+  }
+  .wordmark {
+    grid-area: wordmark;
+    letter-spacing: 0.14em;
+    font-size: 0.68rem;
+    min-width: 0;
+  }
   .ticker { display: none; }
-  .totals { grid-template-columns: 1fr 1fr; }
-  .gallery { flex-direction: column; min-height: auto; }
+  .top-actions {
+    grid-area: actions;
+    gap: 0.45rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .top .btn {
+    padding: 0.42rem 0.62rem;
+    font-size: 0.62rem;
+  }
+  .lang { margin: 0; }
+  .nav {
+    grid-area: nav;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 0.95rem;
+    margin: 0;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav a {
+    flex: 0 0 auto;
+    padding: 0.2rem 0 0.35rem;
+  }
+
+  .gallery {
+    flex-direction: column;
+    height: auto;
+    min-height: 0;
+  }
   .panel {
     flex: none !important;
-    min-height: 42vh;
+    width: 100%;
+    min-height: 78svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    scroll-margin-top: 5.75rem;
   }
-  .panel-copy, .slot { opacity: 1; transform: none; }
+  .panel-copy {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    padding: 1.35rem 1.05rem 1.5rem;
+    opacity: 1;
+    transform: none;
+  }
+  .slot {
+    opacity: 1;
+    transform: none;
+  }
+  .panel h2 {
+    font-size: clamp(1.7rem, 8vw, 2.2rem);
+  }
+  .panel p {
+    max-width: none;
+    font-size: 0.9rem;
+  }
+
+  .foot {
+    position: static;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.65rem;
+    padding: 1rem 1.05rem calc(1.05rem + env(safe-area-inset-bottom));
+    background: var(--bg);
+  }
+
+  .totals { grid-template-columns: 1fr 1fr; }
+  .facts { grid-template-columns: 1fr 1fr; }
   .facts-hero { grid-template-columns: 1fr 1fr; }
-  .sheet-inner { padding-top: 4.2rem; }
+  .sheet-inner {
+    padding: 4.4rem 1.05rem 3.2rem;
+  }
+  .sheet-close {
+    top: max(0.7rem, env(safe-area-inset-top));
+    right: 0.85rem;
+  }
+  .actions .btn {
+    justify-content: center;
+    min-height: 2.6rem;
+  }
+  .career {
+    font-size: 0.8rem;
+  }
+  .career th, .career td {
+    white-space: nowrap;
+    padding-right: 0.85rem;
+  }
+  .dossier { padding-top: 5.4rem; }
+}
+
+@media (max-width: 420px) {
+  .top {
+    grid-template-areas:
+      "wordmark wordmark"
+      "nav nav"
+      "actions actions";
+  }
+  .top-actions { justify-content: flex-start; }
+  .facts,
+  .facts-hero {
+    grid-template-columns: 1fr;
+  }
 }
