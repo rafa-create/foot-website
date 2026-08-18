@@ -232,6 +232,59 @@
     });
   }
 
+  function pageHref(name) {
+    var path = location.pathname || "/";
+    if (/\/[^/]+\.html$/.test(path)) {
+      return path.replace(/\/[^/]+\.html$/, "/" + name);
+    }
+    if (path.slice(-1) !== "/") path += "/";
+    return path + name;
+  }
+
+  function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text).catch(function () {
+        return copyFallback(text);
+      });
+    }
+    return copyFallback(text);
+  }
+
+  function copyFallback(text) {
+    return new Promise(function (resolve, reject) {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.cssText = "position:fixed;top:0;left:0;width:12em;height:3em;opacity:0.01;z-index:99999;";
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      ta.setSelectionRange(0, text.length);
+      var ok = false;
+      try { ok = document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta);
+      if (ok) resolve();
+      else reject(new Error("copy"));
+    });
+  }
+
+  function showBrief(text) {
+    var box = document.getElementById("brief-fallback");
+    if (!box) {
+      box = document.createElement("pre");
+      box.id = "brief-fallback";
+      box.className = "brief-fallback";
+      document.body.appendChild(box);
+    }
+    box.hidden = false;
+    box.textContent = text;
+    var range = document.createRange();
+    range.selectNodeContents(box);
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+  }
+
   var lang = readLang();
   document.documentElement.lang = lang;
   if (window.FOOT_TITLES && window.FOOT_TITLES[lang]) {
@@ -278,24 +331,40 @@
       if (e.key === "Escape") closeSheets();
     });
 
+    document.querySelectorAll('a[href^="dossier.html"], a[href^="./dossier.html"]').forEach(function (a) {
+      var raw = a.getAttribute("href").replace(/^\.\//, "");
+      var q = raw.indexOf("?");
+      var name = q === -1 ? raw : raw.slice(0, q);
+      var extra = q === -1 ? "" : raw.slice(q);
+      a.setAttribute("href", pageHref(name) + extra);
+    });
+    document.querySelectorAll('a[href="index.html"], a[href="./index.html"]').forEach(function (a) {
+      a.setAttribute("href", pageHref("index.html"));
+    });
+
     document.querySelectorAll("[data-copy]").forEach(function (b) {
       b.addEventListener("click", function () {
         var text = brief(document.documentElement.lang);
-        var done = function () {
+        copyText(text).then(function () {
+          b.classList.remove("copy-fail");
           b.classList.add("copied");
           setTimeout(function () { b.classList.remove("copied"); }, 1600);
-        };
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(text).then(done);
-        } else {
-          done();
-        }
+        }).catch(function () {
+          showBrief(text);
+          b.classList.add("copy-fail");
+        });
       });
     });
 
     document.querySelectorAll("[data-print]").forEach(function (b) {
-      b.addEventListener("click", function () { window.print(); });
+      b.addEventListener("click", function () {
+        window.print();
+      });
     });
+
+    if (/\bprint=1\b/.test(location.search)) {
+      setTimeout(function () { window.print(); }, 500);
+    }
 
     var hash = (location.hash || "").replace("#", "");
     if (hash && document.getElementById("sheet-" + hash)) openSheet(hash);

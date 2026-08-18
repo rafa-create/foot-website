@@ -322,8 +322,23 @@ html:not([lang="en"]):not([lang="es"]) [data-es] { display: none; }
   color: #07080a;
   border-color: var(--gold);
 }
-.btn.copied::after {
-  content: " ✓";
+.btn.copied::after { content: " ✓"; }
+.btn.copy-fail::after { content: " — Ctrl+C"; }
+.brief-fallback {
+  position: fixed;
+  z-index: 50;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  max-height: 40vh;
+  overflow: auto;
+  margin: 0;
+  padding: 1rem;
+  background: #111;
+  border: 1px solid var(--gold);
+  color: var(--ink);
+  font-size: 0.82rem;
+  white-space: pre-wrap;
 }
 .career-total th, .career-total td {
   border-bottom: 0;
@@ -369,9 +384,16 @@ html:not([lang="en"]):not([lang="es"]) [data-es] { display: none; }
 .dossier { padding-top: 6rem; padding-bottom: 4rem; }
 
 @media print {
-  .top, .sheet-close, .lang, .nav, .foot { display: none !important; }
-  .dossier-page, .sheet { background: #fff; color: #111; }
-  .kicker, .facts dt, .career th { color: #8a6a32; }
+  html, body, .dossier-page {
+    height: auto !important;
+    overflow: visible !important;
+    background: #fff !important;
+    color: #111 !important;
+  }
+  .top, .sheet-close, .lang, .nav, .foot, .btn, .brief-fallback { display: none !important; }
+  .dossier, .sheet-inner { padding-top: 0 !important; }
+  .kicker, .facts dt, .career th, .totals dt { color: #8a6a32 !important; }
+  .lede, .note, .honours li, .traits p { color: #333 !important; }
 }
 
 .foot {
