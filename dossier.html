@@ -14,7 +14,8 @@
   <script>
     window.FOOT_TITLES = {
       fr: "Rafael Orset — Dossier joueur",
-      en: "Rafael Orset — Player file"
+      en: "Rafael Orset — Player file",
+      es: "Rafael Orset — Ficha del jugador"
     };
   </script>
   <script src="./player.js"></script>
@@ -24,42 +25,58 @@
   <header class="top">
     <p class="wordmark">Rafael Orset</p>
     <nav class="nav">
-      <a href="./index.html" data-fr>Retour</a>
-      <a href="./index.html" data-en>Back</a>
+      <a href="./index.html" data-fr>Site</a>
+      <a href="./index.html" data-en>Site</a>
+      <a href="./index.html" data-es>Sitio</a>
     </nav>
+    <button class="btn btn-ghost" type="button" data-print data-fr>Imprimer</button>
+    <button class="btn btn-ghost" type="button" data-print data-en>Print</button>
+    <button class="btn btn-ghost" type="button" data-print data-es>Imprimir</button>
+    <a class="btn btn-solid" data-mail data-fr>E-mail</a>
+    <a class="btn btn-solid" data-mail data-en>Email</a>
+    <a class="btn btn-solid" data-mail data-es>Email</a>
     <div class="lang" role="group" aria-label="Language">
       <button type="button" data-set="fr">FR</button>
       <button type="button" data-set="en">EN</button>
+      <button type="button" data-set="es">ES</button>
     </div>
   </header>
 
   <article class="sheet-inner dossier">
-    <p class="kicker" data-fr>Dossier joueur — clubs &amp; agents</p>
-    <p class="kicker" data-en>Player file — clubs &amp; agents</p>
+    <p class="kicker" data-fr>Dossier — clubs &amp; agents licenciés</p>
+    <p class="kicker" data-en>File — clubs &amp; licensed agents</p>
+    <p class="kicker" data-es>Dossier — clubes y agentes licenciados</p>
     <h1>Rafael Orset</h1>
     <p class="lede" data-k="status"></p>
 
-    <dl class="facts">
-      <div><dt data-fr>Nationalité</dt><dt data-en>Nationality</dt><dd data-k="nationality"></dd></div>
-      <div><dt data-fr>Né le</dt><dt data-en>Born</dt><dd data-k="dob"></dd></div>
-      <div><dt data-fr>Lieu</dt><dt data-en>Place</dt><dd data-k="birthplace"></dd></div>
-      <div><dt data-fr>Taille / poids</dt><dt data-en>Height / weight</dt><dd><span data-k="height"></span> · <span data-k="weight"></span></dd></div>
-      <div><dt data-fr>Pied</dt><dt data-en>Foot</dt><dd data-k="foot"></dd></div>
-      <div><dt data-fr>Poste</dt><dt data-en>Position</dt><dd data-k="position"></dd></div>
-      <div><dt data-fr>Secondaire</dt><dt data-en>Secondary</dt><dd data-k="positionAlt"></dd></div>
-      <div><dt>Club</dt><dd data-k="club"></dd></div>
-      <div><dt data-fr>Championnat</dt><dt data-en>League</dt><dd data-k="league"></dd></div>
-      <div><dt data-fr>Contrat</dt><dt data-en>Contract</dt><dd data-k="contractUntil"></dd></div>
-      <div><dt data-fr>Passeport</dt><dt data-en>Passport</dt><dd data-k="passport"></dd></div>
-      <div><dt data-fr>Langues</dt><dt data-en>Languages</dt><dd data-k="languages"></dd></div>
-      <div><dt data-fr>Formé à</dt><dt data-en>Academy</dt><dd data-k="formedAt"></dd></div>
-      <div><dt data-fr>Représentation</dt><dt data-en>Representation</dt><dd data-k="agent"></dd></div>
-      <div><dt>E-mail</dt><dd data-k="email"></dd></div>
-      <div><dt data-fr>Téléphone</dt><dt data-en>Phone</dt><dd data-k="phone"></dd></div>
+    <dl class="totals">
+      <div><dt data-fr>Matchs</dt><dt data-en>Apps</dt><dt data-es>Partidos</dt><dd data-k="totApps"></dd></div>
+      <div><dt data-fr>Buts</dt><dt data-en>Goals</dt><dt data-es>Goles</dt><dd data-k="totGoals"></dd></div>
+      <div><dt data-fr>Passes</dt><dt data-en>Assists</dt><dt data-es>Asist.</dt><dd data-k="totAst"></dd></div>
+      <div><dt>Ligue 1</dt><dd data-k="totL1"></dd></div>
     </dl>
 
-    <h2 data-fr>Jeu</h2>
-    <h2 data-en>Game</h2>
+    <dl class="facts">
+      <div><dt data-fr>Poste</dt><dt data-en>Position</dt><dt data-es>Posición</dt><dd data-k="position"></dd></div>
+      <div><dt data-fr>Secondaire</dt><dt data-en>Secondary</dt><dt data-es>Secundaria</dt><dd data-k="positionAlt"></dd></div>
+      <div><dt data-fr>Pied</dt><dt data-en>Foot</dt><dt data-es>Pie</dt><dd data-k="foot"></dd></div>
+      <div><dt data-fr>Taille / poids</dt><dt data-en>Height / weight</dt><dt data-es>Altura / peso</dt><dd><span data-k="height"></span> · <span data-k="weight"></span></dd></div>
+      <div><dt data-fr>Né le</dt><dt data-en>Born</dt><dt data-es>Nacido</dt><dd data-k="dob"></dd></div>
+      <div><dt data-fr>Lieu</dt><dt data-en>Place</dt><dt data-es>Lugar</dt><dd data-k="birthplace"></dd></div>
+      <div><dt>Club</dt><dd data-k="club"></dd></div>
+      <div><dt data-fr>Contrat</dt><dt data-en>Contract</dt><dt data-es>Contrato</dt><dd data-k="contractUntil"></dd></div>
+      <div><dt data-fr>Disponibilité</dt><dt data-en>Availability</dt><dt data-es>Disponibilidad</dt><dd data-k="availability"></dd></div>
+      <div><dt data-fr>Passeport</dt><dt data-en>Passport</dt><dt data-es>Pasaporte</dt><dd data-k="passport"></dd></div>
+      <div><dt data-fr>Langues</dt><dt data-en>Languages</dt><dt data-es>Idiomas</dt><dd data-k="languages"></dd></div>
+      <div><dt data-fr>Marchés</dt><dt data-en>Markets</dt><dt data-es>Mercados</dt><dd data-k="markets"></dd></div>
+      <div><dt data-fr>Formé à</dt><dt data-en>Academy</dt><dt data-es>Cantera</dt><dd data-k="formedAt"></dd></div>
+      <div><dt>E-mail</dt><dd data-k="email"></dd></div>
+      <div><dt data-fr>Téléphone</dt><dt data-en>Phone</dt><dt data-es>Teléfono</dt><dd data-k="phone"></dd></div>
+    </dl>
+
+    <h2 data-fr>Profil de jeu</h2>
+    <h2 data-en>Playing profile</h2>
+    <h2 data-es>Perfil de juego</h2>
     <ol class="traits">
       <li><span>01</span><p data-k="strength0"></p></li>
       <li><span>02</span><p data-k="strength1"></p></li>
@@ -67,28 +84,27 @@
     </ol>
     <p class="note" data-k="scoutNote"></p>
 
-    <h2 data-fr>Résultats</h2>
-    <h2 data-en>Results</h2>
+    <h2 data-fr>Palmarès</h2>
+    <h2 data-en>Honours</h2>
+    <h2 data-es>Palmarés</h2>
     <ul class="honours" data-honours></ul>
 
     <h2 data-fr>Parcours</h2>
     <h2 data-en>Career</h2>
+    <h2 data-es>Trayectoria</h2>
     <table class="career">
       <thead>
         <tr>
-          <th data-fr>Saison</th><th data-en>Season</th>
+          <th data-fr>Saison</th><th data-en>Season</th><th data-es>Temp.</th>
           <th>Club</th>
-          <th data-fr>Compétition</th><th data-en>Competition</th>
-          <th data-fr>Matchs</th><th data-en>Apps</th>
-          <th data-fr>Buts</th><th data-en>Goals</th>
-          <th data-fr>Passes</th><th data-en>Ast.</th>
+          <th data-fr>Compétition</th><th data-en>Competition</th><th data-es>Competición</th>
+          <th data-fr>Matchs</th><th data-en>Apps</th><th data-es>PJ</th>
+          <th data-fr>Buts</th><th data-en>Goals</th><th data-es>Goles</th>
+          <th data-fr>Passes</th><th data-en>Ast.</th><th data-es>Asist.</th>
         </tr>
       </thead>
       <tbody data-career></tbody>
     </table>
-
-    <p class="hint" data-fr>Parcours draft. Photos et highlights hors de cette page.</p>
-    <p class="hint" data-en>Draft career path. Photos and highlights live on the main page.</p>
   </article>
 </body>
 </html>

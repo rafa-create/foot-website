@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rafael Orset</title>
-  <meta name="description" content="Rafael Orset. Left winger, Ligue 1. Nancy, Grenoble, Troyes, Le Havre. Available to clubs and licensed agents abroad." />
+  <title>Rafael Orset — Left winger, Ligue 1</title>
+  <meta name="description" content="Rafael Orset. Left winger, Le Havre, Ligue 1. 25, EU passport. Open to a transfer. For clubs and licensed agents." />
   <link rel="canonical" href="https://rafa-create.github.io/foot-website/" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Rafael Orset" />
-  <meta property="og:description" content="Left winger, Ligue 1. Nancy · Grenoble · Troyes · Le Havre." />
+  <meta property="og:title" content="Rafael Orset — Left winger, Ligue 1" />
+  <meta property="og:description" content="Le Havre · Ligue 1 · EU passport · Open to transfer. File for clubs and licensed agents." />
   <meta property="og:url" content="https://rafa-create.github.io/foot-website/" />
   <meta property="og:image" content="https://rafa-create.github.io/foot-website/og.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -19,10 +19,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./site.css" />
   <script>
-    window.FOOT_TITLES = { fr: "Rafael Orset", en: "Rafael Orset" };
+    window.FOOT_TITLES = {
+      fr: "Rafael Orset — Ailier gauche, Ligue 1",
+      en: "Rafael Orset — Left winger, Ligue 1",
+      es: "Rafael Orset — Extremo izquierdo, Ligue 1"
+    };
     window.FOOT_DESC = {
-      fr: "Rafael Orset. Ailier gauche, Ligue 1. Nancy, Grenoble, Troyes, Le Havre. Dossier pour clubs et agents à l’étranger.",
-      en: "Rafael Orset. Left winger, Ligue 1. Nancy, Grenoble, Troyes, Le Havre. File for clubs and agents abroad."
+      fr: "Rafael Orset. Ailier gauche, Le Havre, Ligue 1. 25 ans, passeport UE. Ouvert à un transfert. Dossier clubs et agents.",
+      en: "Rafael Orset. Left winger, Le Havre, Ligue 1. 25, EU passport. Open to a transfer. File for clubs and licensed agents.",
+      es: "Rafael Orset. Extremo izquierdo, Le Havre, Ligue 1. 25 años, pasaporte UE. Abierto a un traspaso. Dossier para clubes y agentes."
     };
   </script>
   <script src="./player.js"></script>
@@ -31,125 +36,135 @@
 <body>
   <header class="top">
     <p class="wordmark">Rafael Orset</p>
+    <p class="ticker">LW · 1.70 · 25 · L1 · <span data-k="ticker"></span></p>
     <nav class="nav" aria-label="Sections">
-      <a href="#nancy" data-sheet="nancy">Nancy</a>
-      <a href="#grenoble" data-sheet="grenoble">Grenoble</a>
-      <a href="#troyes" data-sheet="troyes">Troyes</a>
       <a href="#lehavre" data-sheet="lehavre">Le Havre</a>
       <a href="#profile" data-sheet="profile" data-fr>Fiche</a>
-      <a href="#profile" data-sheet="profile" data-en>Profile</a>
-      <a href="#agents" data-sheet="agents">Agents</a>
+      <a href="#profile" data-sheet="profile" data-en>File</a>
+      <a href="#profile" data-sheet="profile" data-es>Ficha</a>
+      <a href="./dossier.html" data-fr>PDF</a>
+      <a href="./dossier.html" data-en>PDF</a>
+      <a href="./dossier.html" data-es>PDF</a>
+      <a href="#agents" data-sheet="agents">Contact</a>
     </nav>
+    <a class="btn btn-solid" data-mail data-fr>E-mail</a>
+    <a class="btn btn-solid" data-mail data-en>Email</a>
+    <a class="btn btn-solid" data-mail data-es>Email</a>
     <div class="lang" role="group" aria-label="Language">
       <button type="button" data-set="fr">FR</button>
       <button type="button" data-set="en">EN</button>
+      <button type="button" data-set="es">ES</button>
     </div>
   </header>
 
   <main class="gallery">
-    <button class="panel open" type="button" data-sheet="nancy" data-photo="./photos/01-player.jpg" id="nancy">
-      <span class="slot">Photo — Nancy</span>
+    <button class="panel open" type="button" data-sheet="lehavre" data-photo="./photos/04-career.jpg" id="lehavre">
+      <span class="slot">Photo — Le Havre</span>
       <div class="panel-copy">
-        <p class="kicker">01 — Nancy</p>
-        <h2 data-fr>Là où<br />ça commence.</h2>
-        <h2 data-en>Where it<br />starts.</h2>
-        <p data-fr>Formé à l’ASNL. National, puis Ligue 2. Premier contrat pro.</p>
-        <p data-en>Academy ASNL. National, then Ligue 2. First pro deal.</p>
-        <span class="cta" data-fr>Chapitre →</span>
-        <span class="cta" data-en>Chapter →</span>
-      </div>
-    </button>
-
-    <button class="panel" type="button" data-sheet="grenoble" data-photo="./photos/02-profile.jpg" id="grenoble">
-      <span class="slot">Photo — Grenoble</span>
-      <div class="panel-copy">
-        <p class="kicker">02 — Grenoble</p>
-        <h2 data-fr>Le vrai<br />volume.</h2>
-        <h2 data-en>Real<br />minutes.</h2>
-        <p data-fr>Deux saisons titulaire. 5e de Ligue 2. Barrages. Quarts de Coupe de France.</p>
-        <p data-en>Two seasons as a starter. 5th in Ligue 2. Play-off. Coupe de France QF.</p>
-        <span class="cta" data-fr>Chapitre →</span>
-        <span class="cta" data-en>Chapter →</span>
+        <p class="kicker">Le Havre AC · Ligue 1</p>
+        <h2 data-fr>Club actuel.<br />Titulaire.</h2>
+        <h2 data-en>Current club.<br />Starter.</h2>
+        <h2 data-es>Club actual.<br />Titular.</h2>
+        <p class="statline">2024–26 · 57 · 11 · 9</p>
+        <p data-fr>Deux saisons Ligue 1 : maintien, puis 12e. Contrat au 30.06.2027.</p>
+        <p data-en>Two Ligue 1 seasons: survival, then 12th. Contract to 30 June 2027.</p>
+        <p data-es>Dos temporadas de Ligue 1: permanencia, luego 12.º. Contrato hasta el 30.06.2027.</p>
+        <span class="cta" data-fr>Dossier club →</span>
+        <span class="cta" data-en>Club file →</span>
+        <span class="cta" data-es>Ficha del club →</span>
       </div>
     </button>
 
     <button class="panel" type="button" data-sheet="troyes" data-photo="./photos/03-game.jpg" id="troyes">
       <span class="slot">Photo — Troyes</span>
       <div class="panel-copy">
-        <p class="kicker">03 — Troyes</p>
+        <p class="kicker">ESTAC Troyes</p>
         <h2 data-fr>Première<br />Ligue 1.</h2>
         <h2 data-en>First<br />Ligue 1.</h2>
-        <p data-fr>26 matches dans l’élite. Puis Ligue 2 : 8 buts, 5 passes. Pas une star. Un titulaire.</p>
-        <p data-en>26 games in the top flight. Then Ligue 2: 8 goals, 5 assists. Not a star. A starter.</p>
-        <span class="cta" data-fr>Chapitre →</span>
-        <span class="cta" data-en>Chapter →</span>
+        <h2 data-es>Primera<br />Ligue 1.</h2>
+        <p class="statline">2022–24 · 56 · 12 · 8</p>
+        <p data-fr>26 matches dans l’élite, puis 8 buts en Ligue 2. Rotation vraie, pas un figurant.</p>
+        <p data-en>26 games in the top flight, then 8 goals in Ligue 2. Real rotation, not a cameo.</p>
+        <p data-es>26 partidos en la élite, luego 8 goles en Ligue 2. Rotación real, no un cameo.</p>
+        <span class="cta" data-fr>Dossier club →</span>
+        <span class="cta" data-en>Club file →</span>
+        <span class="cta" data-es>Ficha del club →</span>
       </div>
     </button>
 
-    <button class="panel" type="button" data-sheet="lehavre" data-photo="./photos/04-career.jpg" id="lehavre">
-      <span class="slot">Photo — Le Havre</span>
+    <button class="panel" type="button" data-sheet="grenoble" data-photo="./photos/02-profile.jpg" id="grenoble">
+      <span class="slot">Photo — Grenoble</span>
       <div class="panel-copy">
-        <p class="kicker">04 — Le Havre</p>
-        <h2 data-fr>Confirmé.<br />Deux maintiens.</h2>
-        <h2 data-en>Confirmed.<br />Twice safe.</h2>
-        <p data-fr>Ligue 1, 2024–26. Maintien, puis 12e. Club actuel.</p>
-        <p data-en>Ligue 1, 2024–26. Survival, then 12th. Current club.</p>
-        <span class="cta" data-fr>Chapitre →</span>
-        <span class="cta" data-en>Chapter →</span>
+        <p class="kicker">Grenoble Foot 38</p>
+        <h2 data-fr>Meilleure<br />saison.</h2>
+        <h2 data-en>Best<br />season.</h2>
+        <h2 data-es>Mejor<br />temporada.</h2>
+        <p class="statline">2020–22 · 67 · 15 · 12</p>
+        <p data-fr>Titulaire. 9 buts, 7 passes. 5e de Ligue 2, barrages, quarts de Coupe de France.</p>
+        <p data-en>Starter. 9 goals, 7 assists. 5th in Ligue 2, play-off, Coupe de France QF.</p>
+        <p data-es>Titular. 9 goles, 7 asistencias. 5.º en Ligue 2, play-off, cuartos de Copa.</p>
+        <span class="cta" data-fr>Dossier club →</span>
+        <span class="cta" data-en>Club file →</span>
+        <span class="cta" data-es>Ficha del club →</span>
+      </div>
+    </button>
+
+    <button class="panel" type="button" data-sheet="nancy" data-photo="./photos/01-player.jpg" id="nancy">
+      <span class="slot">Photo — Nancy</span>
+      <div class="panel-copy">
+        <p class="kicker">AS Nancy-Lorraine</p>
+        <h2 data-fr>Formation<br />et premier contrat.</h2>
+        <h2 data-en>Academy<br />and first deal.</h2>
+        <h2 data-es>Cantera<br />y primer contrato.</h2>
+        <p class="statline">2018–20 · 40 · 7 · 4</p>
+        <p data-fr>National, puis Ligue 2. Le socle du dossier.</p>
+        <p data-en>National, then Ligue 2. The base of the file.</p>
+        <p data-es>National, luego Ligue 2. La base del dossier.</p>
+        <span class="cta" data-fr>Dossier club →</span>
+        <span class="cta" data-en>Club file →</span>
+        <span class="cta" data-es>Ficha del club →</span>
       </div>
     </button>
 
     <button class="panel" type="button" data-sheet="agents" data-photo="./photos/05-agents.jpg" id="agents">
-      <span class="slot" data-fr>Photo — suite</span>
-      <span class="slot" data-en>Photo — next</span>
+      <span class="slot">Photo — Contact</span>
       <div class="panel-copy">
-        <p class="kicker" data-fr>05 — Ailleurs</p>
-        <p class="kicker" data-en>05 — Abroad</p>
-        <h2 data-fr>Le prochain<br />club.</h2>
-        <h2 data-en>The next<br />club.</h2>
-        <p data-fr>Championship, Belgique, Portugal, MLS. Dossier pour agents licenciés.</p>
-        <p data-en>Championship, Belgium, Portugal, MLS. File for licensed agents.</p>
+        <p class="kicker" data-fr>Transfert</p>
+        <p class="kicker" data-en>Transfer</p>
+        <p class="kicker" data-es>Traspaso</p>
+        <h2 data-fr>Ouvert.<br />Passeport UE.</h2>
+        <h2 data-en>Open.<br />EU passport.</h2>
+        <h2 data-es>Abierto.<br />Pasaporte UE.</h2>
+        <p data-k="markets"></p>
         <span class="cta" data-fr>Contacter →</span>
-        <span class="cta" data-en>Get in touch →</span>
+        <span class="cta" data-en>Contact →</span>
+        <span class="cta" data-es>Contactar →</span>
       </div>
     </button>
   </main>
 
   <footer class="foot">
-    <span>Le Havre AC · Ligue 1 · n°<span data-k="number"></span></span>
+    <span data-k="availability"></span>
     <span aria-hidden="true">·</span>
-    <a href="./dossier.html" data-fr>Dossier</a>
-    <a href="./dossier.html" data-en>File</a>
+    <a data-mail>orsetrafael@gmail.com</a>
+    <span aria-hidden="true">·</span>
+    <a href="./dossier.html" data-fr>Dossier une page</a>
+    <a href="./dossier.html" data-en>One-page file</a>
+    <a href="./dossier.html" data-es>Dossier de una página</a>
   </footer>
 
-  <div class="sheet" id="sheet-nancy" hidden>
+  <div class="sheet" id="sheet-lehavre" hidden>
     <div class="sheet-inner">
       <button class="sheet-close" type="button" data-close aria-label="Close">×</button>
-      <p class="kicker">01 — Nancy</p>
-      <h1>AS Nancy-Lorraine</h1>
-      <p class="lede" data-fr>Centre de formation, puis groupe pro. National 2018/19, Ligue 2 2019/20. Le premier contrat, pas encore le volume.</p>
-      <p class="lede" data-en>Academy, then the first team. National 2018/19, Ligue 2 2019/20. First contract, not yet the minutes.</p>
+      <p class="kicker">Le Havre AC · Ligue 1</p>
+      <h1>Le Havre AC</h1>
+      <p class="lede" data-fr>Club actuel. Deux saisons titulaire en Ligue 1 : maintien, puis 12e. 11 buts, 9 passes. Contrat jusqu’au 30.06.2027 — ouvert à un transfert.</p>
+      <p class="lede" data-en>Current club. Two seasons as a Ligue 1 starter: survival, then 12th. 11 goals, 9 assists. Contract to 30 June 2027 — open to a transfer.</p>
+      <p class="lede" data-es>Club actual. Dos temporadas como titular en Ligue 1: permanencia, luego 12.º. 11 goles, 9 asistencias. Contrato hasta el 30.06.2027 — abierto a un traspaso.</p>
       <dl class="facts facts-hero">
-        <div><dt>2018/19</dt><dd>19 · 3 · 2</dd></div>
-        <div><dt>2019/20</dt><dd>21 · 4 · 2</dd></div>
-        <div><dt data-fr>Compétitions</dt><dt data-en>Competitions</dt><dd>National · Ligue 2</dd></div>
-      </dl>
-      <p class="hint" data-fr>Matchs · buts · passes. Saison 2019/20 écourtée.</p>
-      <p class="hint" data-en>Apps · goals · assists. 2019/20 season shortened.</p>
-    </div>
-  </div>
-
-  <div class="sheet" id="sheet-grenoble" hidden>
-    <div class="sheet-inner">
-      <button class="sheet-close" type="button" data-close aria-label="Close">×</button>
-      <p class="kicker">02 — Grenoble</p>
-      <h1>Grenoble Foot 38</h1>
-      <p class="lede" data-fr>Le saut. Titulaire deux saisons. Meilleure année : 9 buts, 7 passes. 5e de Ligue 2, barrages d’accession. Quarts de Coupe de France — le plus loin, jamais une finale.</p>
-      <p class="lede" data-en>The jump. Starter for two seasons. Best year: 9 goals, 7 assists. 5th in Ligue 2, promotion play-off. Coupe de France quarter-final — as far as it went, never a final.</p>
-      <dl class="facts facts-hero">
-        <div><dt>2020/21</dt><dd>32 · 6 · 5</dd></div>
-        <div><dt>2021/22</dt><dd>35 · 9 · 7</dd></div>
-        <div><dt data-fr>Résultat</dt><dt data-en>Result</dt><dd data-fr>5e L2 · barrages · ¼ CDF</dd><dd data-en>5th L2 · play-off · QF CdF</dd></div>
+        <div><dt>2024/25</dt><dd>29 · 5 · 4</dd></div>
+        <div><dt>2025/26</dt><dd>28 · 6 · 5</dd></div>
+        <div><dt data-fr>Classement</dt><dt data-en>Finish</dt><dt data-es>Clasificación</dt><dd>L1 · 15e · 12e</dd></div>
       </dl>
     </div>
   </div>
@@ -157,29 +172,45 @@
   <div class="sheet" id="sheet-troyes" hidden>
     <div class="sheet-inner">
       <button class="sheet-close" type="button" data-close aria-label="Close">×</button>
-      <p class="kicker">03 — Troyes</p>
+      <p class="kicker">ESTAC Troyes</p>
       <h1>ESTAC Troyes</h1>
-      <p class="lede" data-fr>Première Ligue 1 : 26 matches, rotation vraie, pas un figurant. Relégation. L’année d’après, Ligue 2 : 8 buts. Un club qui descend, un joueur qui reste utile.</p>
-      <p class="lede" data-en>First Ligue 1: 26 games, real rotation, not a cameo. Relegation. The year after, Ligue 2: 8 goals. A club going down, a player still useful.</p>
+      <p class="lede" data-fr>Première Ligue 1 : 26 matches, minutes réelles. Relégation. L’année suivante en Ligue 2 : 8 buts, 5 passes. Un joueur qui reste utile quand le club descend.</p>
+      <p class="lede" data-en>First Ligue 1: 26 games, real minutes. Relegation. The next year in Ligue 2: 8 goals, 5 assists. Still useful when the club goes down.</p>
+      <p class="lede" data-es>Primera Ligue 1: 26 partidos, minutos reales. Descenso. Al año siguiente en Ligue 2: 8 goles, 5 asistencias. Sigue siendo útil cuando el club baja.</p>
       <dl class="facts facts-hero">
         <div><dt>2022/23 L1</dt><dd>26 · 4 · 3</dd></div>
         <div><dt>2023/24 L2</dt><dd>30 · 8 · 5</dd></div>
-        <div><dt data-fr>Lecture</dt><dt data-en>Read</dt><dd data-fr>Élite, puis volume</dd><dd data-en>Top flight, then volume</dd></div>
       </dl>
     </div>
   </div>
 
-  <div class="sheet" id="sheet-lehavre" hidden>
+  <div class="sheet" id="sheet-grenoble" hidden>
     <div class="sheet-inner">
       <button class="sheet-close" type="button" data-close aria-label="Close">×</button>
-      <p class="kicker">04 — Le Havre</p>
-      <h1>Le Havre AC</h1>
-      <p class="lede" data-fr>Club actuel. Deux saisons Ligue 1 : maintien, puis 12e. 11 buts, 9 passes. Contrat jusqu’en 2027. Le dossier s’arrête ici — la suite se joue à l’étranger.</p>
-      <p class="lede" data-en>Current club. Two Ligue 1 seasons: survival, then 12th. 11 goals, 9 assists. Contract to 2027. The file stops here — the next chapter is abroad.</p>
+      <p class="kicker">Grenoble Foot 38 · Ligue 2</p>
+      <h1>Grenoble Foot 38</h1>
+      <p class="lede" data-fr>Le saut de volume. Titulaire deux saisons. Meilleure année : 9 buts, 7 passes. 5e de Ligue 2, barrages d’accession, quarts de Coupe de France.</p>
+      <p class="lede" data-en>The jump in minutes. Starter for two seasons. Best year: 9 goals, 7 assists. 5th in Ligue 2, promotion play-off, Coupe de France quarter-final.</p>
+      <p class="lede" data-es>El salto de minutos. Titular dos temporadas. Mejor año: 9 goles, 7 asistencias. 5.º en Ligue 2, play-off de ascenso, cuartos de Copa.</p>
       <dl class="facts facts-hero">
-        <div><dt>2024/25</dt><dd>29 · 5 · 4</dd></div>
-        <div><dt>2025/26</dt><dd>28 · 6 · 5</dd></div>
-        <div><dt data-fr>Classement</dt><dt data-en>Finish</dt><dd>L1 · 15e · 12e</dd></div>
+        <div><dt>2020/21</dt><dd>32 · 6 · 5</dd></div>
+        <div><dt>2021/22</dt><dd>35 · 9 · 7</dd></div>
+        <div><dt data-fr>Résultat</dt><dt data-en>Result</dt><dt data-es>Resultado</dt><dd data-fr>5e L2 · barrages · ¼ CDF</dd><dd data-en>5th L2 · play-off · QF CdF</dd><dd data-es>5.º L2 · play-off · ¼ Copa</dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <div class="sheet" id="sheet-nancy" hidden>
+    <div class="sheet-inner">
+      <button class="sheet-close" type="button" data-close aria-label="Close">×</button>
+      <p class="kicker">AS Nancy-Lorraine</p>
+      <h1>AS Nancy-Lorraine</h1>
+      <p class="lede" data-fr>Centre de formation, puis groupe pro. National 2018/19, Ligue 2 2019/20 (saison écourtée). Premier contrat.</p>
+      <p class="lede" data-en>Academy, then the first team. National 2018/19, Ligue 2 2019/20 (shortened season). First professional contract.</p>
+      <p class="lede" data-es>Cantera, luego el primer equipo. National 2018/19, Ligue 2 2019/20 (temporada acortada). Primer contrato profesional.</p>
+      <dl class="facts facts-hero">
+        <div><dt>2018/19</dt><dd>19 · 3 · 2</dd></div>
+        <div><dt>2019/20</dt><dd>21 · 4 · 2</dd></div>
       </dl>
     </div>
   </div>
@@ -187,85 +218,98 @@
   <div class="sheet" id="sheet-profile" hidden>
     <div class="sheet-inner">
       <button class="sheet-close" type="button" data-close aria-label="Close">×</button>
-      <p class="kicker" data-fr>Fiche</p>
-      <p class="kicker" data-en>Profile</p>
+      <p class="kicker" data-fr>Fiche joueur</p>
+      <p class="kicker" data-en>Player file</p>
+      <p class="kicker" data-es>Ficha del jugador</p>
       <h1>Rafael Orset</h1>
       <p class="lede" data-k="status"></p>
-      <dl class="facts">
-        <div><dt data-fr>N°</dt><dt data-en>No.</dt><dd data-k="number"></dd></div>
-        <div><dt data-fr>Nationalité</dt><dt data-en>Nationality</dt><dd data-k="nationality"></dd></div>
-        <div><dt data-fr>Né le</dt><dt data-en>Born</dt><dd data-k="dob"></dd></div>
-        <div><dt data-fr>Lieu</dt><dt data-en>Place</dt><dd data-k="birthplace"></dd></div>
-        <div><dt data-fr>Taille</dt><dt data-en>Height</dt><dd data-k="height"></dd></div>
-        <div><dt data-fr>Poids</dt><dt data-en>Weight</dt><dd data-k="weight"></dd></div>
-        <div><dt data-fr>Pied fort</dt><dt data-en>Preferred foot</dt><dd data-k="foot"></dd></div>
-        <div><dt data-fr>Poste</dt><dt data-en>Position</dt><dd data-k="position"></dd></div>
-        <div><dt data-fr>Secondaire</dt><dt data-en>Secondary</dt><dd data-k="positionAlt"></dd></div>
-        <div><dt data-fr>Club</dt><dt data-en>Club</dt><dd data-k="club"></dd></div>
-        <div><dt data-fr>Championnat</dt><dt data-en>League</dt><dd data-k="league"></dd></div>
-        <div><dt data-fr>Contrat</dt><dt data-en>Contract</dt><dd data-k="contractUntil"></dd></div>
-        <div><dt data-fr>Passeport</dt><dt data-en>Passport</dt><dd data-k="passport"></dd></div>
-        <div><dt data-fr>Langues</dt><dt data-en>Languages</dt><dd data-k="languages"></dd></div>
-        <div><dt data-fr>Formé à</dt><dt data-en>Academy</dt><dd data-k="formedAt"></dd></div>
+      <dl class="totals">
+        <div><dt data-fr>Matchs</dt><dt data-en>Apps</dt><dt data-es>Partidos</dt><dd data-k="totApps"></dd></div>
+        <div><dt data-fr>Buts</dt><dt data-en>Goals</dt><dt data-es>Goles</dt><dd data-k="totGoals"></dd></div>
+        <div><dt data-fr>Passes</dt><dt data-en>Assists</dt><dt data-es>Asist.</dt><dd data-k="totAst"></dd></div>
+        <div><dt>Ligue 1</dt><dd data-k="totL1"></dd></div>
       </dl>
-      <h2 data-fr>Jeu</h2>
-      <h2 data-en>Game</h2>
+      <dl class="facts">
+        <div><dt data-fr>Poste</dt><dt data-en>Position</dt><dt data-es>Posición</dt><dd data-k="position"></dd></div>
+        <div><dt data-fr>Secondaire</dt><dt data-en>Secondary</dt><dt data-es>Secundaria</dt><dd data-k="positionAlt"></dd></div>
+        <div><dt data-fr>Pied</dt><dt data-en>Foot</dt><dt data-es>Pie</dt><dd data-k="foot"></dd></div>
+        <div><dt data-fr>Taille / poids</dt><dt data-en>Height / weight</dt><dt data-es>Altura / peso</dt><dd><span data-k="height"></span> · <span data-k="weight"></span></dd></div>
+        <div><dt data-fr>Né le</dt><dt data-en>Born</dt><dt data-es>Nacido</dt><dd data-k="dob"></dd></div>
+        <div><dt data-fr>Lieu</dt><dt data-en>Place</dt><dt data-es>Lugar</dt><dd data-k="birthplace"></dd></div>
+        <div><dt>Club</dt><dd data-k="club"></dd></div>
+        <div><dt data-fr>Contrat</dt><dt data-en>Contract</dt><dt data-es>Contrato</dt><dd data-k="contractUntil"></dd></div>
+        <div><dt data-fr>Disponibilité</dt><dt data-en>Availability</dt><dt data-es>Disponibilidad</dt><dd data-k="availability"></dd></div>
+        <div><dt data-fr>Passeport</dt><dt data-en>Passport</dt><dt data-es>Pasaporte</dt><dd data-k="passport"></dd></div>
+        <div><dt data-fr>Langues</dt><dt data-en>Languages</dt><dt data-es>Idiomas</dt><dd data-k="languages"></dd></div>
+        <div><dt data-fr>Marchés</dt><dt data-en>Markets</dt><dt data-es>Mercados</dt><dd data-k="markets"></dd></div>
+        <div><dt data-fr>Formé à</dt><dt data-en>Academy</dt><dt data-es>Cantera</dt><dd data-k="formedAt"></dd></div>
+        <div><dt data-fr>Représentation</dt><dt data-en>Representation</dt><dt data-es>Representación</dt><dd data-k="agent"></dd></div>
+      </dl>
+      <h2 data-fr>Profil de jeu</h2>
+      <h2 data-en>Playing profile</h2>
+      <h2 data-es>Perfil de juego</h2>
       <ol class="traits">
         <li><span>01</span><p data-k="strength0"></p></li>
         <li><span>02</span><p data-k="strength1"></p></li>
         <li><span>03</span><p data-k="strength2"></p></li>
       </ol>
       <p class="note" data-k="scoutNote"></p>
-      <h2 data-fr>Résultats</h2>
-      <h2 data-en>Results</h2>
+      <h2 data-fr>Palmarès</h2>
+      <h2 data-en>Honours</h2>
+      <h2 data-es>Palmarés</h2>
       <ul class="honours" data-honours></ul>
       <h2 data-fr>Parcours</h2>
       <h2 data-en>Career</h2>
+      <h2 data-es>Trayectoria</h2>
       <table class="career">
         <thead>
           <tr>
-            <th data-fr>Saison</th><th data-en>Season</th>
+            <th data-fr>Saison</th><th data-en>Season</th><th data-es>Temp.</th>
             <th>Club</th>
-            <th data-fr>Compétition</th><th data-en>Competition</th>
-            <th data-fr>Matchs</th><th data-en>Apps</th>
-            <th data-fr>Buts</th><th data-en>Goals</th>
-            <th data-fr>Passes</th><th data-en>Ast.</th>
+            <th data-fr>Compétition</th><th data-en>Competition</th><th data-es>Competición</th>
+            <th data-fr>Matchs</th><th data-en>Apps</th><th data-es>PJ</th>
+            <th data-fr>Buts</th><th data-en>Goals</th><th data-es>Goles</th>
+            <th data-fr>Passes</th><th data-en>Ast.</th><th data-es>Asist.</th>
           </tr>
         </thead>
         <tbody data-career></tbody>
       </table>
-      <p class="media-slot">
-        <a class="cta-link" data-highlight hidden target="_blank" rel="noopener">Highlights →</a>
-        <span data-no-highlight data-fr>Highlights : à coller dans <code>player.js</code>.</span>
-        <span data-no-highlight data-en>Highlights: paste URL in <code>player.js</code>.</span>
-      </p>
+      <p class="hint" data-fr>Bande-annonce vidéo : sur demande (e-mail / WhatsApp).</p>
+      <p class="hint" data-en>Highlight reel: on request (email / WhatsApp).</p>
+      <p class="hint" data-es>Vídeo highlights: bajo petición (email / WhatsApp).</p>
     </div>
   </div>
 
   <div class="sheet" id="sheet-agents" hidden>
     <div class="sheet-inner">
       <button class="sheet-close" type="button" data-close aria-label="Close">×</button>
-      <p class="kicker" data-fr>05 — Ailleurs</p>
-      <p class="kicker" data-en>05 — Abroad</p>
-      <h1 data-fr>Le prochain<br />club.</h1>
-      <h1 data-en>The next<br />club.</h1>
+      <p class="kicker" data-fr>Clubs &amp; agents licenciés</p>
+      <p class="kicker" data-en>Clubs &amp; licensed agents</p>
+      <p class="kicker" data-es>Clubes y agentes licenciados</p>
+      <h1 data-fr>Contact direct.</h1>
+      <h1 data-en>Direct contact.</h1>
+      <h1 data-es>Contacto directo.</h1>
       <p class="lede" data-k="status"></p>
       <dl class="facts">
-        <div><dt>E-mail</dt><dd data-k="email"></dd></div>
-        <div><dt data-fr>Téléphone</dt><dt data-en>Phone</dt><dd data-k="phone"></dd></div>
-        <div><dt>Instagram</dt><dd data-k="instagram"></dd></div>
-        <div><dt data-fr>Agent</dt><dt data-en>Agent</dt><dd data-k="agent"></dd></div>
+        <div><dt>E-mail</dt><dd><a data-mail data-k="email"></a></dd></div>
+        <div><dt data-fr>Téléphone</dt><dt data-en>Phone</dt><dt data-es>Teléfono</dt><dd><a data-tel data-k="phone"></a></dd></div>
+        <div><dt>WhatsApp</dt><dd><a data-wa target="_blank" rel="noopener">WhatsApp</a></dd></div>
+        <div><dt>Instagram</dt><dd><a data-ig target="_blank" rel="noopener" data-k="instagram"></a></dd></div>
+        <div><dt data-fr>Disponibilité</dt><dt data-en>Availability</dt><dt data-es>Disponibilidad</dt><dd data-k="availability"></dd></div>
+        <div><dt data-fr>Marchés cibles</dt><dt data-en>Target markets</dt><dt data-es>Mercados</dt><dd data-k="markets"></dd></div>
       </dl>
       <div class="actions">
-        <a class="btn" data-mail hidden data-fr>Écrire</a>
-        <a class="btn" data-mail hidden data-en>Email</a>
+        <a class="btn btn-solid" data-mail data-fr>Écrire</a>
+        <a class="btn btn-solid" data-mail data-en>Email</a>
+        <a class="btn btn-solid" data-mail data-es>Escribir</a>
+        <a class="btn" data-wa target="_blank" rel="noopener">WhatsApp</a>
         <button class="btn btn-ghost" type="button" data-copy data-fr>Copier le brief</button>
         <button class="btn btn-ghost" type="button" data-copy data-en>Copy brief</button>
-        <a class="btn btn-ghost" href="./dossier.html" data-fr>Dossier imprimable</a>
-        <a class="btn btn-ghost" href="./dossier.html" data-en>Printable file</a>
+        <button class="btn btn-ghost" type="button" data-copy data-es>Copiar brief</button>
+        <a class="btn btn-ghost" href="./dossier.html" data-fr>Dossier une page</a>
+        <a class="btn btn-ghost" href="./dossier.html" data-en>One-page file</a>
+        <a class="btn btn-ghost" href="./dossier.html" data-es>Dossier de una página</a>
       </div>
-      <p class="hint" data-fr>Photos ensuite. E-mail et téléphone à brancher. Parcours : draft pour le look du site.</p>
-      <p class="hint" data-en>Photos next. Email and phone still to wire. Career path: draft for the site’s look.</p>
     </div>
   </div>
 </body>

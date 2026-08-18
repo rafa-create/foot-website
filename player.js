@@ -1,62 +1,78 @@
-/** Parcours draft — clubs français solides, sans extrait type PSG / Barça. */
 window.FOOT_PLAYER = {
   name: "Rafael Orset",
-  nationality: "France",
+  nationality: { fr: "France", en: "France", es: "Francia" },
   number: "17",
 
-  position: { fr: "Ailier gauche", en: "Left winger" },
-  positionAlt: { fr: "Attaquant de soutien", en: "Second striker" },
-  foot: { fr: "Droit", en: "Right" },
+  position: { fr: "Ailier gauche", en: "Left winger", es: "Extremo izquierdo" },
+  positionAlt: { fr: "Attaquant de soutien", en: "Second striker", es: "Segunda punta" },
+  foot: { fr: "Droit", en: "Right", es: "Derecho" },
 
   height: "1.70 m",
   weight: "65 kg",
   dob: "08.10.2000",
-  birthplace: { fr: "Nancy, France", en: "Nancy, France" },
+  birthplace: { fr: "Nancy, France", en: "Nancy, France", es: "Nancy, Francia" },
 
   club: "Le Havre AC",
-  league: { fr: "Ligue 1", en: "Ligue 1" },
+  league: { fr: "Ligue 1", en: "Ligue 1", es: "Ligue 1" },
   contractUntil: "30.06.2027",
   status: {
-    fr: "Ligue 1, 25 ans. Ouvert à un club à l’étranger — Championship, Belgique, Portugal, MLS. Pas un dossier européen. Un titulaire qui enchaîne.",
-    en: "Ligue 1, 25. Open to a club abroad — Championship, Belgium, Portugal, MLS. Not a European résumé. A starter who shows up every week."
+    fr: "Ailier gauche, Ligue 1, 25 ans. Contrat jusqu’au 30.06.2027. Ouvert à un transfert. Passeport UE. FR / ES / EN.",
+    en: "Left winger, Ligue 1, 25. Contract to 30 June 2027. Open to a transfer. EU passport. FR / ES / EN.",
+    es: "Extremo izquierdo, Ligue 1, 25 años. Contrato hasta el 30.06.2027. Abierto a un traspaso. Pasaporte UE. FR / ES / EN."
   },
-  passport: { fr: "France · UE", en: "France · EU" },
+  availability: {
+    fr: "Sous contrat · ouvert à un transfert",
+    en: "Under contract · open to transfer",
+    es: "Bajo contrato · abierto a traspaso"
+  },
+  markets: {
+    fr: "Championship · Liga Portugal · Pro League · MLS · Liga",
+    en: "Championship · Liga Portugal · Pro League · MLS · LaLiga",
+    es: "Championship · Liga Portugal · Pro League · MLS · LaLiga"
+  },
+  passport: { fr: "France · UE", en: "France · EU", es: "Francia · UE" },
   languages: "FR · ES · EN",
 
   highlights: "",
   email: "orsetrafael@gmail.com",
   phone: "+33 6 51 88 04 22",
   instagram: "@rafael.orset",
+  instagramUrl: "https://instagram.com/rafael.orset",
   agent: {
     fr: "Contact direct — pas de mandat exclusif",
-    en: "Direct contact — no exclusive mandate"
+    en: "Direct contact — no exclusive mandate",
+    es: "Contacto directo — sin mandato exclusivo"
   },
   formedAt: "AS Nancy-Lorraine",
 
   strengths: [
     {
-      fr: "1,70 m, centre de gravité bas. 1 contre 1 côté gauche, centre en course.",
-      en: "1.70 m, low centre of gravity. 1v1 on the left, crosses on the run."
+      fr: "1,70 m, centre de gravité bas. 1v1 à gauche, centre en course.",
+      en: "1.70 m, low centre of gravity. 1v1 on the left, delivery on the run.",
+      es: "1,70 m, centro de gravedad bajo. 1v1 por la izquierda, centro en carrera."
     },
     {
-      fr: "Volume : 25+ matches par saison depuis 2020, L2 puis L1.",
-      en: "Volume: 25+ games a season since 2020, Ligue 2 then Ligue 1."
+      fr: "Volume : 25+ matches par saison depuis 2020, Ligue 2 puis Ligue 1.",
+      en: "Volume: 25+ games a season since 2020, Ligue 2 then Ligue 1.",
+      es: "Volumen: 25+ partidos por temporada desde 2020, Ligue 2 y Ligue 1."
     },
     {
-      fr: "Presse et repli. Utile dans un bloc haut ou médian.",
-      en: "Press and recovery. Fits a high or mid block."
+      fr: "Presse et repli. Tient la largeur dans un 4-3-3 ou un 4-2-3-1.",
+      en: "Press and recovery. Holds the width in a 4-3-3 or 4-2-3-1.",
+      es: "Presión y repliegue. Sostiene la banda en un 4-3-3 o 4-2-3-1."
     }
   ],
   scoutNote: {
-    fr: "Ailier gauche droitier, 1,70 m / 65 kg, formé à Nancy. Profil bas, vif, utile dans les petits espaces. Percée à Grenoble (Ligue 2, barrages 2022, quarts de Coupe de France). Première Ligue 1 à Troyes, confirmé au Havre : deux maintiens, une 12e place. FR, ES, EN. Pas un finisseur à 15 buts. Un winger qui tient la largeur, sert la surface, et reste disponible. Pour un club qui veut de la Ligue 1 sans payer un profil Ligue des champions.",
-    en: "Right-footed left winger, 1.70 m / 65 kg, academy Nancy. Low, sharp, useful in tight space. Breakthrough at Grenoble (Ligue 2 play-off 2022, Coupe de France QF). First Ligue 1 at Troyes, confirmed at Le Havre: two survival seasons, then 12th. FR, ES, EN. Not a 15-goal finisher. A winger who holds the width, serves the box, and stays available. For a club that wants Ligue 1 minutes without a Champions League price."
+    fr: "Ailier gauche droitier, 1,70 m / 65 kg. 83 matches de Ligue 1 (Troyes, Le Havre). Meilleure saison : 9 buts, 7 passes à Grenoble. Titulaire au Havre : maintien puis 12e. Profil immédiat pour un club de Championship, Liga Portugal, Pro League ou MLS qui veut des minutes d’élite française, un passeport UE, et trois langues.",
+    en: "Right-footed left winger, 1.70 m / 65 kg. 83 Ligue 1 appearances (Troyes, Le Havre). Best season: 9 goals, 7 assists at Grenoble. Starter at Le Havre: survival, then 12th. Immediate profile for a Championship, Liga Portugal, Pro League or MLS club that wants French top-flight minutes, an EU passport, and three languages.",
+    es: "Extremo izquierdo diestro, 1,70 m / 65 kg. 83 partidos de Ligue 1 (Troyes, Le Havre). Mejor temporada: 9 goles, 7 asistencias en Grenoble. Titular en Le Havre: permanencia y luego 12.º. Perfil inmediato para Championship, Liga Portugal, Pro League o MLS: minutos de élite francesa, pasaporte UE y tres idiomas."
   },
 
   honours: [
-    { fr: "Grenoble — 5e Ligue 2, barrages d’accession (2022)", en: "Grenoble — 5th in Ligue 2, promotion play-off (2022)" },
-    { fr: "Coupe de France — quarts de finale (2022)", en: "Coupe de France — quarter-final (2022)" },
-    { fr: "Le Havre — maintien Ligue 1 (2025)", en: "Le Havre — Ligue 1 survival (2025)" },
-    { fr: "Le Havre — 12e Ligue 1 (2026)", en: "Le Havre — 12th in Ligue 1 (2026)" }
+    { fr: "Grenoble — 5e Ligue 2, barrages d’accession (2022)", en: "Grenoble — 5th in Ligue 2, promotion play-off (2022)", es: "Grenoble — 5.º en Ligue 2, play-off de ascenso (2022)" },
+    { fr: "Coupe de France — quarts de finale (2022)", en: "Coupe de France — quarter-final (2022)", es: "Coupe de France — cuartos de final (2022)" },
+    { fr: "Le Havre — maintien Ligue 1 (2025)", en: "Le Havre — Ligue 1 survival (2025)", es: "Le Havre — permanencia en Ligue 1 (2025)" },
+    { fr: "Le Havre — 12e Ligue 1 (2026)", en: "Le Havre — 12th in Ligue 1 (2026)", es: "Le Havre — 12.º en Ligue 1 (2026)" }
   ],
 
   career: [

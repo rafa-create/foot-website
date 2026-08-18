@@ -1,15 +1,18 @@
 (function () {
   var KEY = "foot-lang";
+  var LANGS = { fr: 1, en: 1, es: 1 };
 
   function readLang() {
-    var q = /(?:\?|&)lang=(en|fr)\b/.exec(location.search);
+    var q = /(?:\?|&)lang=(en|fr|es)\b/.exec(location.search);
     if (q) return q[1];
     try {
       var s = localStorage.getItem(KEY);
-      if (s === "en" || s === "fr") return s;
+      if (LANGS[s]) return s;
     } catch (e) {}
-    var n = (navigator.language || "fr").slice(0, 2).toLowerCase();
-    return n === "en" ? "en" : "fr";
+    var n = (navigator.language || "en").slice(0, 2).toLowerCase();
+    if (n === "fr") return "fr";
+    if (n === "es") return "es";
+    return "en";
   }
 
   function val(v, lang) {
@@ -24,8 +27,26 @@
     el.classList.toggle("tbd", empty);
   }
 
+  function digits(x) { return parseInt(x, 10) || 0; }
+
+  function totals(p) {
+    var t = { apps: 0, goals: 0, assists: 0, l1: 0 };
+    (p.career || []).forEach(function (r) {
+      t.apps += digits(r.apps);
+      t.goals += digits(r.goals);
+      t.assists += digits(r.assists);
+      if (r.competition === "Ligue 1") t.l1 += digits(r.apps);
+    });
+    return t;
+  }
+
+  function phoneDigits(phone) {
+    return String(phone || "").replace(/[^\d]/g, "");
+  }
+
   function bind(lang) {
     var p = window.FOOT_PLAYER || {};
+    var t = totals(p);
     var map = {
       name: p.name,
       nationality: p.nationality,
@@ -40,6 +61,8 @@
       league: p.league,
       contractUntil: p.contractUntil,
       status: p.status,
+      availability: p.availability,
+      markets: p.markets,
       passport: p.passport,
       languages: p.languages,
       email: p.email,
@@ -51,14 +74,18 @@
       scoutNote: p.scoutNote,
       strength0: (p.strengths && p.strengths[0]) || "",
       strength1: (p.strengths && p.strengths[1]) || "",
-      strength2: (p.strengths && p.strengths[2]) || ""
+      strength2: (p.strengths && p.strengths[2]) || "",
+      totApps: String(t.apps),
+      totGoals: String(t.goals),
+      totAst: String(t.assists),
+      totL1: String(t.l1),
+      ticker: t.apps + " · " + t.goals + " · " + t.assists
     };
     document.querySelectorAll("[data-k]").forEach(function (el) {
       fill(el, val(map[el.getAttribute("data-k")], lang));
     });
 
-    var body = document.querySelector("[data-career]");
-    if (body) {
+    document.querySelectorAll("[data-career]").forEach(function (body) {
       body.innerHTML = "";
       (p.career || []).forEach(function (row) {
         var tr = document.createElement("tr");
@@ -69,17 +96,25 @@
         });
         body.appendChild(tr);
       });
-    }
+      var foot = document.createElement("tr");
+      foot.className = "career-total";
+      [lang === "es" ? "Total" : "Total", String(t.apps), String(t.goals), String(t.assists)].forEach(function (cell, i) {
+        var td = document.createElement(i === 0 ? "th" : "td");
+        if (i === 0) td.setAttribute("colspan", "3");
+        td.textContent = cell;
+        foot.appendChild(td);
+      });
+      body.appendChild(foot);
+    });
 
-    var hon = document.querySelector("[data-honours]");
-    if (hon) {
+    document.querySelectorAll("[data-honours]").forEach(function (hon) {
       hon.innerHTML = "";
       (p.honours || []).forEach(function (h) {
         var li = document.createElement("li");
         li.textContent = val(h, lang);
         hon.appendChild(li);
       });
-    }
+    });
 
     var hl = val(p.highlights, lang);
     document.querySelectorAll("[data-highlight]").forEach(function (a) {
@@ -91,46 +126,72 @@
     });
 
     var mail = val(p.email, lang);
+    var subj = encodeURIComponent("Rafael Orset — LW / Ligue 1");
     document.querySelectorAll("[data-mail]").forEach(function (a) {
       a.hidden = !mail;
-      if (mail) {
-        a.setAttribute(
-          "href",
-          "mailto:" + mail + "?subject=" + encodeURIComponent("Rafael Orset — player enquiry")
-        );
-      }
+      if (mail) a.setAttribute("href", "mailto:" + mail + "?subject=" + subj);
+    });
+
+    var tel = val(p.phone, lang);
+    document.querySelectorAll("[data-tel]").forEach(function (a) {
+      a.hidden = !tel;
+      if (tel) a.setAttribute("href", "tel:" + tel.replace(/\s/g, ""));
+    });
+    var wa = phoneDigits(tel);
+    document.querySelectorAll("[data-wa]").forEach(function (a) {
+      a.hidden = !wa;
+      if (wa) a.setAttribute("href", "https://wa.me/" + wa);
+    });
+    document.querySelectorAll("[data-ig]").forEach(function (a) {
+      var url = p.instagramUrl || "";
+      a.hidden = !url;
+      if (url) a.setAttribute("href", url);
     });
   }
 
   function brief(lang) {
     var p = window.FOOT_PLAYER || {};
+    var t = totals(p);
     var dash = function (v) { return val(v, lang) || "—"; };
-    var lines = lang === "fr"
-      ? [
-          "Rafael Orset — dossier joueur",
-          dash(p.status),
-          "Nationalité: " + dash(p.nationality),
-          "Poste: " + dash(p.position) + " / " + dash(p.positionAlt),
-          "Pied: " + dash(p.foot) + " · Taille: " + dash(p.height) + " · Poids: " + dash(p.weight),
-          "Né: " + dash(p.dob) + " · " + dash(p.birthplace),
-          "Club: " + dash(p.club) + " · " + dash(p.league) + " · Contrat: " + dash(p.contractUntil),
-          "Passeport: " + dash(p.passport) + " · Langues: " + dash(p.languages),
-          "Contact: " + dash(p.email) + " · " + dash(p.phone),
-          "Site: https://rafa-create.github.io/foot-website/"
-        ]
-      : [
-          "Rafael Orset — player file",
-          dash(p.status),
-          "Nationality: " + dash(p.nationality),
-          "Position: " + dash(p.position) + " / " + dash(p.positionAlt),
-          "Foot: " + dash(p.foot) + " · Height: " + dash(p.height) + " · Weight: " + dash(p.weight),
-          "Born: " + dash(p.dob) + " · " + dash(p.birthplace),
-          "Club: " + dash(p.club) + " · " + dash(p.league) + " · Contract: " + dash(p.contractUntil),
-          "Passport: " + dash(p.passport) + " · Languages: " + dash(p.languages),
-          "Contact: " + dash(p.email) + " · " + dash(p.phone),
-          "Site: https://rafa-create.github.io/foot-website/"
-        ];
-    return lines.join("\n");
+    var lines = {
+      fr: [
+        "Rafael Orset — ailier gauche, Ligue 1",
+        dash(p.status),
+        "Carrière: " + t.apps + " matches · " + t.goals + " buts · " + t.assists + " passes · " + t.l1 + " en Ligue 1",
+        "Poste: " + dash(p.position) + " / " + dash(p.positionAlt) + " · Pied: " + dash(p.foot),
+        "1.70 m / 65 kg · Né: " + dash(p.dob) + " · " + dash(p.birthplace),
+        "Club: " + dash(p.club) + " · Contrat: " + dash(p.contractUntil) + " · " + dash(p.availability),
+        "Passeport: " + dash(p.passport) + " · Langues: " + dash(p.languages),
+        "Marchés: " + dash(p.markets),
+        "Contact: " + dash(p.email) + " · " + dash(p.phone),
+        "Dossier: https://rafa-create.github.io/foot-website/dossier.html"
+      ],
+      en: [
+        "Rafael Orset — left winger, Ligue 1",
+        dash(p.status),
+        "Career: " + t.apps + " apps · " + t.goals + " goals · " + t.assists + " assists · " + t.l1 + " in Ligue 1",
+        "Position: " + dash(p.position) + " / " + dash(p.positionAlt) + " · Foot: " + dash(p.foot),
+        "1.70 m / 65 kg · Born: " + dash(p.dob) + " · " + dash(p.birthplace),
+        "Club: " + dash(p.club) + " · Contract: " + dash(p.contractUntil) + " · " + dash(p.availability),
+        "Passport: " + dash(p.passport) + " · Languages: " + dash(p.languages),
+        "Markets: " + dash(p.markets),
+        "Contact: " + dash(p.email) + " · " + dash(p.phone),
+        "File: https://rafa-create.github.io/foot-website/dossier.html"
+      ],
+      es: [
+        "Rafael Orset — extremo izquierdo, Ligue 1",
+        dash(p.status),
+        "Carrera: " + t.apps + " partidos · " + t.goals + " goles · " + t.assists + " asistencias · " + t.l1 + " en Ligue 1",
+        "Posición: " + dash(p.position) + " / " + dash(p.positionAlt) + " · Pie: " + dash(p.foot),
+        "1.70 m / 65 kg · Nacido: " + dash(p.dob) + " · " + dash(p.birthplace),
+        "Club: " + dash(p.club) + " · Contrato: " + dash(p.contractUntil) + " · " + dash(p.availability),
+        "Pasaporte: " + dash(p.passport) + " · Idiomas: " + dash(p.languages),
+        "Mercados: " + dash(p.markets),
+        "Contacto: " + dash(p.email) + " · " + dash(p.phone),
+        "Dossier: https://rafa-create.github.io/foot-website/dossier.html"
+      ]
+    };
+    return (lines[lang] || lines.en).join("\n");
   }
 
   function apply(lang) {
@@ -224,11 +285,21 @@
 
     document.querySelectorAll("[data-copy]").forEach(function (b) {
       b.addEventListener("click", function () {
-        var text = brief(document.documentElement.lang === "en" ? "en" : "fr");
+        var text = brief(document.documentElement.lang);
+        var done = function () {
+          b.classList.add("copied");
+          setTimeout(function () { b.classList.remove("copied"); }, 1600);
+        };
         if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(text);
+          navigator.clipboard.writeText(text).then(done);
+        } else {
+          done();
         }
       });
+    });
+
+    document.querySelectorAll("[data-print]").forEach(function (b) {
+      b.addEventListener("click", function () { window.print(); });
     });
 
     var hash = (location.hash || "").replace("#", "");
