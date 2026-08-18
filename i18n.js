@@ -47,6 +47,7 @@
       instagram: p.instagram,
       agent: p.agent,
       formedAt: p.formedAt,
+      number: p.number,
       scoutNote: p.scoutNote,
       strength0: (p.strengths && p.strengths[0]) || "",
       strength1: (p.strengths && p.strengths[1]) || "",
@@ -67,6 +68,16 @@
           tr.appendChild(td);
         });
         body.appendChild(tr);
+      });
+    }
+
+    var hon = document.querySelector("[data-honours]");
+    if (hon) {
+      hon.innerHTML = "";
+      (p.honours || []).forEach(function (h) {
+        var li = document.createElement("li");
+        li.textContent = val(h, lang);
+        hon.appendChild(li);
       });
     }
 

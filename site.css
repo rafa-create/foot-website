@@ -36,7 +36,9 @@ html:not([lang="en"]) [data-en] { display: none; }
 }
 .nav {
   display: flex;
-  gap: 1.35rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 1.1rem 1.25rem;
   margin-left: auto;
 }
 .nav a, .lang button {
@@ -247,6 +249,18 @@ html:not([lang="en"]) [data-en] { display: none; }
 .traits span { color: var(--gold); font-size: 0.72rem; letter-spacing: 0.14em; }
 .traits p, .note, .formed { margin: 0; color: var(--muted); line-height: 1.45; }
 .formed { margin: 0 0 1.2rem; }
+.honours {
+  list-style: none;
+  margin: 0.4rem 0 0;
+  padding: 0;
+}
+.honours li {
+  margin: 0;
+  padding: 0.7rem 0;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  line-height: 1.4;
+}
 .career {
   width: 100%;
   border-collapse: collapse;
