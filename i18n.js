@@ -67,7 +67,6 @@
       languages: p.languages,
       email: p.email,
       phone: p.phone,
-      instagram: p.instagram,
       agent: p.agent,
       formedAt: p.formedAt,
       number: p.number,
@@ -138,14 +137,10 @@
       if (tel) a.setAttribute("href", "tel:" + tel.replace(/\s/g, ""));
     });
     var wa = phoneDigits(tel);
+    if (wa.length === 10 && wa.indexOf("0") === 0) wa = "33" + wa.slice(1);
     document.querySelectorAll("[data-wa]").forEach(function (a) {
       a.hidden = !wa;
       if (wa) a.setAttribute("href", "https://wa.me/" + wa);
-    });
-    document.querySelectorAll("[data-ig]").forEach(function (a) {
-      var url = p.instagramUrl || "";
-      a.hidden = !url;
-      if (url) a.setAttribute("href", url);
     });
   }
 

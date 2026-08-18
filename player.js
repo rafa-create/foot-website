@@ -35,9 +35,7 @@ window.FOOT_PLAYER = {
 
   highlights: "",
   email: "orsetrafael@gmail.com",
-  phone: "+33 6 51 88 04 22",
-  instagram: "@rafael.orset",
-  instagramUrl: "https://instagram.com/rafael.orset",
+  phone: "06 95 75 38 71",
   agent: {
     fr: "Contact direct — pas de mandat exclusif",
     en: "Direct contact — no exclusive mandate",
