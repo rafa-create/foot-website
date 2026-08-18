@@ -8,25 +8,25 @@ window.FOOT_PLAYER = {
   positionAlt: { fr: "Attaquant de soutien", en: "Second striker" },
   foot: { fr: "Droit", en: "Right" },
 
-  height: "1.82 m",
-  weight: "76 kg",
-  dob: "14.05.1999",
+  height: "1.70 m",
+  weight: "65 kg",
+  dob: "08.10.2000",
   birthplace: { fr: "Nancy, France", en: "Nancy, France" },
 
   club: "Le Havre AC",
   league: { fr: "Ligue 1", en: "Ligue 1" },
   contractUntil: "30.06.2027",
   status: {
-    fr: "Ligue 1, 27 ans. Ouvert à un club à l’étranger — Championship, Belgique, Portugal, MLS. Pas un dossier européen. Un titulaire qui enchaîne.",
-    en: "Ligue 1, 27. Open to a club abroad — Championship, Belgium, Portugal, MLS. Not a European résumé. A starter who shows up every week."
+    fr: "Ligue 1, 25 ans. Ouvert à un club à l’étranger — Championship, Belgique, Portugal, MLS. Pas un dossier européen. Un titulaire qui enchaîne.",
+    en: "Ligue 1, 25. Open to a club abroad — Championship, Belgium, Portugal, MLS. Not a European résumé. A starter who shows up every week."
   },
   passport: { fr: "France · UE", en: "France · EU" },
-  languages: "FR · EN",
+  languages: "FR · ES · EN",
 
   highlights: "",
-  email: "",
-  phone: "",
-  instagram: "",
+  email: "orsetrafael@gmail.com",
+  phone: "+33 6 51 88 04 22",
+  instagram: "@rafael.orset",
   agent: {
     fr: "Contact direct — pas de mandat exclusif",
     en: "Direct contact — no exclusive mandate"
@@ -35,8 +35,8 @@ window.FOOT_PLAYER = {
 
   strengths: [
     {
-      fr: "1 contre 1 côté gauche. Centre en course, pas à l’arrêt.",
-      en: "1v1 on the left. Crosses on the run, not standing still."
+      fr: "1,70 m, centre de gravité bas. 1 contre 1 côté gauche, centre en course.",
+      en: "1.70 m, low centre of gravity. 1v1 on the left, crosses on the run."
     },
     {
       fr: "Volume : 25+ matches par saison depuis 2020, L2 puis L1.",
@@ -48,8 +48,8 @@ window.FOOT_PLAYER = {
     }
   ],
   scoutNote: {
-    fr: "Ailier gauche droitier, formé à Nancy. Percée à Grenoble (Ligue 2, barrages 2022, quarts de Coupe de France). Première Ligue 1 à Troyes, confirmé au Havre : deux maintiens, une 12e place. Pas un finisseur à 15 buts. Un winger qui tient la largeur, sert la surface, et reste disponible. Pour un club qui veut de la Ligue 1 sans payer un profil Ligue des champions.",
-    en: "Right-footed left winger, academy Nancy. Breakthrough at Grenoble (Ligue 2 play-off 2022, Coupe de France QF). First Ligue 1 at Troyes, confirmed at Le Havre: two survival seasons, then 12th. Not a 15-goal finisher. A winger who holds the width, serves the box, and stays available. For a club that wants Ligue 1 minutes without a Champions League price."
+    fr: "Ailier gauche droitier, 1,70 m / 65 kg, formé à Nancy. Profil bas, vif, utile dans les petits espaces. Percée à Grenoble (Ligue 2, barrages 2022, quarts de Coupe de France). Première Ligue 1 à Troyes, confirmé au Havre : deux maintiens, une 12e place. FR, ES, EN. Pas un finisseur à 15 buts. Un winger qui tient la largeur, sert la surface, et reste disponible. Pour un club qui veut de la Ligue 1 sans payer un profil Ligue des champions.",
+    en: "Right-footed left winger, 1.70 m / 65 kg, academy Nancy. Low, sharp, useful in tight space. Breakthrough at Grenoble (Ligue 2 play-off 2022, Coupe de France QF). First Ligue 1 at Troyes, confirmed at Le Havre: two survival seasons, then 12th. FR, ES, EN. Not a 15-goal finisher. A winger who holds the width, serves the box, and stays available. For a club that wants Ligue 1 minutes without a Champions League price."
   },
 
   honours: [
