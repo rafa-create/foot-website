@@ -183,7 +183,7 @@
         "Pasaporte: " + dash(p.passport) + " · Idiomas: " + dash(p.languages),
         "Mercados: " + dash(p.markets),
         "Contacto: " + dash(p.email) + " · " + dash(p.phone),
-        "Dossier: https://rafa-create.github.io/foot-website/dossier.html"
+        "Ficha: https://rafa-create.github.io/foot-website/dossier.html"
       ]
     };
     return (lines[lang] || lines.en).join("\n");
