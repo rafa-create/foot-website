@@ -194,6 +194,7 @@ html:not([lang="en"]):not([lang="es"]) [data-es] { display: none; }
 .panel:hover .slot { opacity: 1; }
 .panel.has-photo .slot { display: none; }
 
+.sheet[hidden] { display: none !important; }
 .sheet {
   position: fixed;
   inset: 0;
@@ -432,7 +433,12 @@ html:not([lang="en"]):not([lang="es"]) [data-es] { display: none; }
 .foot a:hover { color: var(--gold); }
 .foot span { opacity: 0.85; }
 
-@media (max-width: 800px) {
+@media (max-width: 1400px) and (min-width: 1101px) {
+  .ticker { display: none; }
+  .nav { gap: 0.85rem 1rem; }
+}
+
+@media (max-width: 1100px) {
   html, body {
     height: auto;
     min-height: 100%;
@@ -453,15 +459,18 @@ html:not([lang="en"]):not([lang="es"]) [data-es] { display: none; }
       "wordmark actions"
       "nav nav";
     align-items: center;
-    gap: 0.55rem 0.7rem;
-    padding: max(0.65rem, env(safe-area-inset-top)) 0.9rem 0.7rem;
+    gap: 0.45rem 0.65rem;
+    padding: max(0.55rem, env(safe-area-inset-top)) 0.9rem 0.55rem;
     background: rgba(7, 8, 10, 0.96);
   }
   .wordmark {
     grid-area: wordmark;
-    letter-spacing: 0.14em;
-    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    font-size: 0.66rem;
     min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .ticker { display: none; }
   .top-actions {
@@ -480,7 +489,7 @@ html:not([lang="en"]):not([lang="es"]) [data-es] { display: none; }
     display: flex;
     flex-wrap: nowrap;
     justify-content: flex-start;
-    gap: 0.95rem;
+    gap: 1.15rem;
     margin: 0;
     width: 100%;
     overflow-x: auto;
@@ -501,22 +510,40 @@ html:not([lang="en"]):not([lang="es"]) [data-es] { display: none; }
   .panel {
     flex: none !important;
     width: 100%;
-    min-height: 78svh;
+    min-height: 0;
+    height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    scroll-margin-top: 5.75rem;
+    justify-content: flex-start;
+    scroll-margin-top: 5.5rem;
+    background-position: center 18%;
+  }
+  .panel::before {
+    content: "";
+    display: block;
+    flex: 0 0 auto;
+    height: min(62svh, 28rem);
+    pointer-events: none;
+  }
+  .panel::after {
+    inset: 0 0 auto;
+    height: min(62svh, 28rem);
   }
   .panel-copy {
     position: relative;
     left: auto;
     right: auto;
     bottom: auto;
-    padding: 1.35rem 1.05rem 1.5rem;
+    z-index: 2;
+    margin-top: 0;
+    padding: 1.15rem 1.05rem 1.45rem;
     opacity: 1;
     transform: none;
+    background: var(--bg);
   }
   .slot {
+    inset: 12% 10% auto;
+    height: min(38svh, 16rem);
     opacity: 1;
     transform: none;
   }
@@ -560,14 +587,14 @@ html:not([lang="en"]):not([lang="es"]) [data-es] { display: none; }
   .dossier { padding-top: 5.4rem; }
 }
 
-@media (max-width: 420px) {
-  .top {
-    grid-template-areas:
-      "wordmark wordmark"
-      "nav nav"
-      "actions actions";
+@media (max-width: 1100px) and (orientation: landscape) {
+  .panel::before,
+  .panel::after {
+    height: min(46svh, 18rem);
   }
-  .top-actions { justify-content: flex-start; }
+}
+
+@media (max-width: 420px) {
   .facts,
   .facts-hero {
     grid-template-columns: 1fr;
