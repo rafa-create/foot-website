@@ -1,16 +1,22 @@
-# Foot — site vitrine (draft)
+# Rafael Orset — dossier joueur
 
-Même principe que [beatonstep-website](https://github.com/rafa-create/beatonstep-website) : mini-site public GitHub Pages, à côté du projet.
+Landing publique pour **clubs et agents à l’étranger**. Look : panneaux type [cristianoronaldo.com](https://www.cristianoronaldo.com/).
 
-Look : landing sombre à panneaux (réf. [cristianoronaldo.com](https://www.cristianoronaldo.com/)).
+URL : https://rafa-create.github.io/foot-website/
+
+## Avant les photos
+
+1. Remplir `player.js` (poste, club, stats, e-mail…).
+2. Déposer les JPG dans `photos/` :
+   - `01-player.jpg` portrait
+   - `02-profile.jpg` fiche
+   - `03-game.jpg` action
+   - `04-career.jpg` match
+   - `05-agents.jpg` média
+3. Coller l’URL highlights dans `player.js` → `highlights`.
+
+Tant que les fichiers photo n’existent pas, les panneaux restent des emplacements vides.
 
 ## Local
 
-Ouvrir `index.html` ou servir le dossier.
-
-## GitHub Pages
-
-Repo : `rafa-create/foot-website`  
-URL : https://rafa-create.github.io/foot-website/
-
-Source = racine de `main` (pas `/docs`).
+Servir le dossier (pas `file://` si tu testes le chargement photo).
