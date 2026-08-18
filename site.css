@@ -54,6 +54,7 @@ html:not([lang="en"]):not([lang="es"]) [data-es] { display: none; }
   font-weight: 600;
   letter-spacing: 0.28em;
   text-transform: uppercase;
+  cursor: pointer;
 }
 .nav {
   display: flex;
@@ -92,7 +93,7 @@ html:not([lang="en"]):not([lang="es"]) [data-es] { display: none; }
   text-decoration: none;
   color: inherit;
   background: #101114 center 18% / cover no-repeat;
-  transition: flex 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: flex 0.7s cubic-bezier(0.22, 1, 0.36, 1);
   cursor: pointer;
   border: 0;
   padding: 0;

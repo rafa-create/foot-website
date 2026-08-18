@@ -302,6 +302,8 @@
       });
     });
 
+    document.querySelector(".wordmark") && document.querySelector(".wordmark").addEventListener("click", closeSheets);
+
     var panels = Array.prototype.slice.call(document.querySelectorAll(".panel"));
     panels.forEach(function (p) {
       p.addEventListener("mouseenter", function () {
