@@ -1,6 +1,6 @@
 # Rafael Orset — dossier joueur
 
-Landing publique pour **clubs et agents à l’étranger**. Look : panneaux type [cristianoronaldo.com](https://www.cristianoronaldo.com/). Parcours draft : Nancy → Grenoble → Troyes → Le Havre (solide, pas PSG).
+Landing publique pour **clubs et agents à l’étranger**. Look : panneaux type [cristianoronaldo.com](https://www.cristianoronaldo.com/). Parcours draft : Pulnoy → Grenoble → Troyes → Le Havre (solide, pas PSG).
 
 URL : https://rafa-create.github.io/foot-website/
 

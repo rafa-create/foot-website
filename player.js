@@ -41,7 +41,7 @@ window.FOOT_PLAYER = {
     en: "Direct contact — no exclusive mandate",
     es: "Contacto directo — sin mandato exclusivo"
   },
-  formedAt: "AS Nancy-Lorraine",
+  formedAt: "FC Pulnoy",
 
   strengths: [
     {
@@ -80,7 +80,7 @@ window.FOOT_PLAYER = {
     { season: "2022/23", club: "ESTAC Troyes", competition: "Ligue 1", apps: "26", goals: "4", assists: "3" },
     { season: "2021/22", club: "Grenoble Foot 38", competition: "Ligue 2", apps: "35", goals: "9", assists: "7" },
     { season: "2020/21", club: "Grenoble Foot 38", competition: "Ligue 2", apps: "32", goals: "6", assists: "5" },
-    { season: "2019/20", club: "AS Nancy-Lorraine", competition: "Ligue 2", apps: "21", goals: "4", assists: "2" },
-    { season: "2018/19", club: "AS Nancy-Lorraine", competition: "National", apps: "19", goals: "3", assists: "2" }
+    { season: "2019/20", club: "FC Pulnoy", competition: "Régional 1", apps: "21", goals: "4", assists: "2" },
+    { season: "2018/19", club: "FC Pulnoy", competition: "Régional 1", apps: "19", goals: "3", assists: "2" }
   ]
 };
